@@ -45,6 +45,7 @@
   text-decoration: none;
   transition: all 0.3s ease;
   cursor: pointer;
+  margin-left: 20px;
 }
 
 .logo:hover {
@@ -59,6 +60,7 @@
   justify-content: center;
   color: white;
   transition: all 0.3s ease;
+  margin-right: 15px;
 }
 
 .logo-icon svg {
