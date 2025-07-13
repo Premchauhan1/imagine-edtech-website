@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/imagine-edtech-website/static/css/main.74221ac6.css",
-    "main.js": "/imagine-edtech-website/static/js/main.cbfa6923.js",
+    "main.css": "/imagine-edtech-website/static/css/main.9e403cf3.css",
+    "main.js": "/imagine-edtech-website/static/js/main.f296bc59.js",
     "static/css/781.c5b9818b.chunk.css": "/imagine-edtech-website/static/css/781.c5b9818b.chunk.css",
     "static/js/781.6fd1f0fa.chunk.js": "/imagine-edtech-website/static/js/781.6fd1f0fa.chunk.js",
     "static/css/28.35a929dd.chunk.css": "/imagine-edtech-website/static/css/28.35a929dd.chunk.css",
@@ -14,8 +14,8 @@
     "static/media/hero-background.jpg": "/imagine-edtech-website/static/media/hero-background.72106d2a5edd2351e75c.jpg",
     "static/media/company-logo.png": "/imagine-edtech-website/static/media/company-logo.1656ffbef9e6bd97d0b2.png",
     "index.html": "/imagine-edtech-website/index.html",
-    "main.74221ac6.css.map": "/imagine-edtech-website/static/css/main.74221ac6.css.map",
-    "main.cbfa6923.js.map": "/imagine-edtech-website/static/js/main.cbfa6923.js.map",
+    "main.9e403cf3.css.map": "/imagine-edtech-website/static/css/main.9e403cf3.css.map",
+    "main.f296bc59.js.map": "/imagine-edtech-website/static/js/main.f296bc59.js.map",
     "781.c5b9818b.chunk.css.map": "/imagine-edtech-website/static/css/781.c5b9818b.chunk.css.map",
     "781.6fd1f0fa.chunk.js.map": "/imagine-edtech-website/static/js/781.6fd1f0fa.chunk.js.map",
     "28.35a929dd.chunk.css.map": "/imagine-edtech-website/static/css/28.35a929dd.chunk.css.map",
@@ -27,7 +27,7 @@
     "453.cb059362.chunk.js.map": "/imagine-edtech-website/static/js/453.cb059362.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.74221ac6.css",
-    "static/js/main.cbfa6923.js"
+    "static/css/main.9e403cf3.css",
+    "static/js/main.f296bc59.js"
   ]
 }
