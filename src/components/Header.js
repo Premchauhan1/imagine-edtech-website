@@ -33,9 +33,9 @@ const Header = () => {
         
         <a href="#home" className="logo" onClick={() => scrollToSection('home')}>
           <div className="logo-icon">
-            <img src={logo} width={100} height={100} alt="Imagine EdTech Logo" className="logo" />
+            <img src={logo} width={90} height={90} alt="Imagine EdTech Logo" className="logo" />
           </div>
-          <span>Imagine EdTech</span>
+          <span>  Imagine EdTech</span>
         </a>
 
         <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>

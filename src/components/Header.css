@@ -14,6 +14,9 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
 .header.scrolled {
@@ -441,6 +444,18 @@ html {
   transition: opacity 0.3s ease;
   pointer-events: none;
   border-radius: inherit;
+  will-change: opacity;
+}
+
+/* Prevent flash of unstyled content */
+.header-loading {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.header-loaded {
+  opacity: 1;
+  visibility: visible;
 }
 
 .header.scrolled::before {
@@ -450,23 +465,34 @@ html {
 /* Header entrance animation */
 @keyframes headerSlideDown {
   from {
-    transform: translateY(-100px);
+    transform: translateX(-50%) translateY(-20px);
     opacity: 0;
   }
   to {
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0);
     opacity: 1;
   }
 }
 
-.header {
-  animation: headerSlideDown 0.6s ease-out;
+.header-loaded {
+  animation: headerSlideDown 0.4s ease-out;
+}
+
+.header-loading {
+  transform: translateX(-50%) translateY(-20px);
+  opacity: 0;
 }
 
 /* Floating effect on hover */
 .header:hover {
   transform: translateX(-50%) translateY(-2px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Prevent layout shift during loading */
+.header {
+  will-change: transform, opacity;
+  transform: translateX(-50%);
 }
 
 /* Logo text gradient animation */
@@ -489,6 +515,7 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  will-change: background-position;
 }
 
 /* Hover effect for navigation items */

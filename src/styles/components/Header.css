@@ -45,8 +45,6 @@
   text-decoration: none;
   transition: all 0.3s ease;
   cursor: pointer;
-  width: 100px;
-  height: 100px;
 }
 
 .logo:hover {
@@ -372,10 +370,6 @@
   .nav {
     width: calc(100% - 10px);
     border-radius: 12px;
-  }
-  .logo{
-    width: 60px;
-    height: 60px;
   }
   .logo span {
     font-size: 0.8rem;
