@@ -434,12 +434,32 @@
 }
 
 @media (max-width: 640px) {
+  .contact-section {
+    padding: 40px 0;
+    overflow-x: hidden;
+  }
+  
+  .contact-section .container {
+    padding: 0 16px;
+    max-width: 100%;
+  }
+  
+  .contact-content {
+    gap: var(--space-8);
+  }
+  
   .contact-form-container {
     padding: var(--space-6);
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
   }
   
   .contact-stats {
     padding: var(--space-4);
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
   }
   
   .stat-item {
@@ -452,10 +472,18 @@
   .form-group select,
   .form-group textarea {
     padding: var(--space-3);
+    width: 100%;
+    box-sizing: border-box;
   }
   
   .submit-btn {
     padding: var(--space-4) var(--space-6);
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .section-header {
+    padding: 0 16px;
   }
 }
 

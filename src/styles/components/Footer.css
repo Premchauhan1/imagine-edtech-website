@@ -596,6 +596,7 @@
   
   .footer-links {
     gap: 12px;
+    flex-direction: row;
   }
 }
 

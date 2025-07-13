@@ -141,8 +141,7 @@ const Contact = () => {
 
               <button 
                 type="submit" 
-                className="form-submit"
-                disabled={isSubmitting}
+                className="submit-btn"
               >
                 {isSubmitting ? (
                   <>

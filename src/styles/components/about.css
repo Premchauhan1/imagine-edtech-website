@@ -764,33 +764,92 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
   }
   
   .hero-stats {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 12px;
   }
   
   .stat-card {
-    padding: 20px;
+    padding: 16px;
   }
   
   .stat-value {
-    font-size: 2rem;
+    font-size: 1.6rem;
+  }
+  
+  .stat-label {
+    font-size: 0.8rem;
   }
   
   .section-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   
   .tab-buttons {
-    flex-direction: column;
+    flex-direction: row;
     gap: 4px;
+    padding: 4px;
+  }
+  
+  .tab-btn {
+    padding: 10px 12px;
+    font-size: 0.8rem;
+    flex: 1;
   }
   
   .tab-content {
-    padding: 32px 24px;
+    padding: 24px 16px;
+    margin: 20px;
+  }
+  
+  .tab-panel h3 {
+    font-size: 1.3rem;
+  }
+  
+  .tab-panel p {
+    font-size: 0.9rem;
+  }
+  
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  
+  .value-card {
+    padding: 12px;
+    text-align: center;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  
+  .value-card h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .value-card p {
+    font-size: 0.8rem;
+  }
+  
+  .timeline-section {
+    padding: 15px 0;
+    overflow-x: visible;
+  }
+  
+  .timeline {
+    padding-left: 60px;
+    margin-left: 0;
+    max-width: 100%;
+    position: relative;
   }
   
   .timeline::before {
@@ -800,29 +859,60 @@
   .timeline-item {
     flex-direction: row !important;
     padding-left: 60px;
+    margin-bottom: 15px;
+    position: relative;
   }
   
   .timeline-marker {
     position: absolute;
-    left: -40px;
+    left: -55px;
     margin: 0;
+    z-index: 2;
+  }
+  
+  .marker-year {
+    padding: 3px 6px;
+    font-size: 0.6rem;
+    white-space: nowrap;
+    min-width: 40px;
+    text-align: center;
+  }
+  
+  .timeline-content {
+    padding: 8px;
+    margin-right: 10px;
+    width: calc(100% - 20px);
+  }
+  
+  .timeline-content h4 {
+    font-size: 0.8rem;
+    margin-bottom: 3px;
+  }
+  
+  .timeline-content p {
+    font-size: 0.65rem;
+    line-height: 1.2;
   }
   
   .team-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
   }
   
   .testimonial-card {
-    padding: 32px 24px;
+    padding: 20px 16px;
+  }
+  
+  .testimonial-quote {
+    font-size: 1rem;
   }
   
   .cta-content {
-    padding: 40px 24px;
+    padding: 30px 20px;
   }
   
   .cta-content h2 {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
   
   .cta-buttons {
@@ -837,15 +927,91 @@
   }
   
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.6rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.9rem;
   }
   
   .hero-stats {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .stat-card {
+    padding: 12px;
+  }
+  
+  .stat-value {
+    font-size: 1.4rem;
+  }
+  
+  .stat-label {
+    font-size: 0.75rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
   }
   
   .values-grid {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .value-card {
+    padding: 12px;
+    margin: 0 4px;
+  }
+  
+  .value-card h4 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+  
+  .value-card p {
+    font-size: 0.8rem;
+  }
+  
+  .timeline {
+    padding-left: 50px;
+    margin-left: 5px;
+  }
+  
+  .timeline::before {
+    left: 15px;
+  }
+  
+  .timeline-item {
+    padding-left: 50px;
+    margin-bottom: 12px;
+    position: relative;
+  }
+  
+  .timeline-marker {
+    left: -45px;
+    z-index: 2;
+  }
+  
+  .marker-year {
+    padding: 3px 6px;
+    font-size: 0.65rem;
+    min-width: 45px;
+  }
+  
+  .timeline-content {
+    padding: 10px;
+    margin-right: 10px;
+    width: calc(100% - 20px);
+  }
+  
+  .timeline-content h4 {
+    font-size: 0.9rem;
+  }
+  
+  .timeline-content p {
+    font-size: 0.75rem;
   }
   
   .team-grid {
@@ -854,5 +1020,119 @@
   
   .testimonial-quote {
     font-size: 1.1rem;
+  }
+  
+  /* Keep tabs horizontal on mobile */
+  .tab-buttons {
+    flex-direction: row;
+    gap: 4px;
+    padding: 6px;
+    margin-bottom: 32px;
+  }
+  
+  .tab-btn {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    min-width: 0;
+    flex: 1;
+    max-width: none;
+  }
+  
+  .tab-content {
+    padding: 32px 20px;
+            margin: 20px;
+  }
+  
+  .mission-tabs {
+    margin: 0 -16px;
+    padding: 0 16px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 375px) {
+  .hero-title {
+    font-size: 1.4rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.8rem;
+  }
+  
+  .stat-value {
+    font-size: 1.2rem;
+  }
+  
+  .stat-label {
+    font-size: 0.7rem;
+  }
+  
+  .section-title {
+    font-size: 1.3rem;
+  }
+  
+  .timeline {
+    padding-left: 45px;
+    margin: 10px;
+  }
+  
+  .timeline::before {
+    left: 12px;
+  }
+  
+  .timeline-item {
+    padding-left: 45px;
+    position: relative;
+  }
+  
+  .timeline-marker {
+    left: -40px;
+    z-index: 2;
+  }
+  
+  .marker-year {
+    padding: 2px 4px;
+    font-size: 0.55rem;
+    min-width: 35px;
+  }
+  
+  .timeline-content {
+    padding: 10px;
+    margin-right: 6px;
+  }
+  
+  .timeline-content h4 {
+    font-size: 0.9rem;
+  }
+  
+  .timeline-content p {
+    font-size: 0.75rem;
+  }
+  
+  .value-card {
+    padding: 10px;
+    margin: 0 2px;
+  }
+  
+  .value-card h4 {
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+  }
+  
+  .value-card p {
+    font-size: 0.75rem;
+  }
+  
+  .tab-btn {
+    padding: 6px 8px;
+    font-size: 0.75rem;
+  }
+  
+  .tab-panel h3 {
+    font-size: 1.1rem;
+  }
+  
+  .tab-panel p {
+    font-size: 0.8rem;
   }
 }
