@@ -262,7 +262,7 @@ const About = () => {
               <div key={index} className="timeline-item">
                 <div className="timeline-marker">
                   <div className="marker-dot"></div>
-                  <div className="marker-year">{item.year}</div>
+                  {/* <div className="marker-year">{item.year}</div> */}
                 </div>
                 <div className="timeline-content">
                   <h4>{item.title}</h4>

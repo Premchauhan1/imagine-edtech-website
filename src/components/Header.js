@@ -5,6 +5,7 @@ import logo from '../assets/images/company-logo.png';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuClosing, setIsMenuClosing] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,7 +17,15 @@ const Header = () => {
   }, []);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    if (isMenuOpen) {
+      setIsMenuClosing(true);
+      setTimeout(() => {
+        setIsMenuOpen(false);
+        setIsMenuClosing(false);
+      }, 250); // Match animation duration
+    } else {
+      setIsMenuOpen(true);
+    }
   };
 
   const scrollToSection = (sectionId) => {
@@ -24,21 +33,34 @@ const Header = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-    setIsMenuOpen(false);
+    if (isMenuOpen) {
+      setIsMenuClosing(true);
+      setTimeout(() => {
+        setIsMenuOpen(false);
+        setIsMenuClosing(false);
+      }, 250);
+    }
   };
 
   return (
-    <header className={`header ${isScrolled ? 'scrolled' : ''}`} >
-      <div className="container">
+    <>
+      {/* Mobile menu backdrop */}
+      <div 
+        className={`mobile-menu-backdrop ${isMenuOpen ? 'active' : ''}`}
+        onClick={toggleMenu}
+      ></div>
+      
+      <header className={`header ${isScrolled ? 'scrolled' : ''}`} >
+        <div className="container">
         
         <a href="#home" className="logo" onClick={() => scrollToSection('home')}>
           <div className="logo-icon">
-            <img src={logo} width={90} height={90} alt="Imagine EdTech Logo" className="logo" />
+            <img src={logo} width={85} height={85} alt="Imagine EdTech Logo" className="logo" />
           </div>
           <span>  Imagine EdTech</span>
         </a>
 
-        <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
+        <nav className={`nav ${isMenuOpen ? 'nav-open' : ''} ${isMenuClosing ? 'nav-closing' : ''}`}>
           <ul className="nav-links">
             <li><a onClick={() => scrollToSection('home')}>Home</a></li>
             <li><a onClick={() => scrollToSection('services')}>Solutions</a></li>
@@ -64,8 +86,9 @@ const Header = () => {
         >
           {isMenuOpen ? <X /> : <Menu />}
         </button>
-      </div>
-    </header>
+        </div>
+      </header>
+    </>
   );
 };
 
