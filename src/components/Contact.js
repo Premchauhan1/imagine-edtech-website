@@ -36,18 +36,68 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
+    // Create email subject and body
+    const subject = `New Project Inquiry from ${formData.name || 'Website Visitor'}`;
+    const body = `Hello Imagine EdTech Team,
+
+I am interested in your services and would like to discuss a potential project.
+
+Contact Details:
+- Name: ${formData.name}
+- Email: ${formData.email}
+
+Project Description:
+${formData.message}
+
+Please get back to me at your earliest convenience.
+
+Best regards,
+${formData.name}`;
+
+    // Create mailto link
+    const mailtoLink = `mailto:imagineedtech@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // Debug: Log the mailto link
+    console.log('Mailto link:', mailtoLink);
+    
+    // Try multiple methods to open email client
+    try {
+      // Method 1: Try window.open first
+      const emailWindow = window.open(mailtoLink, '_self');
+      
+      // Method 2: Fallback to window.location if window.open fails
+      if (!emailWindow) {
+        window.location.href = mailtoLink;
+      }
+    } catch (error) {
+      console.error('Error opening email client:', error);
+      // Method 3: Create a temporary link and click it
+      const tempLink = document.createElement('a');
+      tempLink.href = mailtoLink;
+      tempLink.style.display = 'none';
+      document.body.appendChild(tempLink);
+      tempLink.click();
+      document.body.removeChild(tempLink);
+    }
+    
+    // Show success message after opening email
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
+      // Store email details for fallback display
       setFormData({
         name: '',
         email: '',
         company: '',
         service: '',
-        message: ''
+        message: '',
+        emailDetails: {
+          to: 'imagineedtech@gmail.com',
+          subject: subject,
+          body: body
+        }
       });
-    }, 2000);
+    }, 1000);
   };
 
 
@@ -59,14 +109,38 @@ const Contact = () => {
             <div className="success-icon">
               <CheckCircle />
             </div>
-            <h2>Thank You!</h2>
-            <p>Your message has been sent successfully. We'll get back to you within 24 hours.</p>
-            <button 
-              className="btn btn-primary"
-              onClick={() => setIsSubmitted(false)}
-            >
-              Send Another Message
-            </button>
+            <h2>Email Client Opened!</h2>
+            <p>Your email client should have opened with a pre-filled message to imagineedtech@gmail.com.</p>
+            
+            <div className="email-fallback">
+              <h3>If your email client didn't open, you can manually send an email to:</h3>
+              <div className="email-details">
+                <p><strong>To:</strong> imagineedtech@gmail.com</p>
+                <p><strong>Subject:</strong> {formData.emailDetails?.subject}</p>
+                <div className="email-body">
+                  <p><strong>Message:</strong></p>
+                  <pre>{formData.emailDetails?.body}</pre>
+                </div>
+              </div>
+            </div>
+            
+            <div className="success-actions">
+              <button 
+                className="btn btn-primary"
+                onClick={() => {
+                  const mailtoLink = `mailto:imagineedtech@gmail.com?subject=${encodeURIComponent(formData.emailDetails?.subject || '')}&body=${encodeURIComponent(formData.emailDetails?.body || '')}`;
+                  window.open(mailtoLink, '_self');
+                }}
+              >
+                Try Opening Email Again
+              </button>
+              <button 
+                className="btn btn-secondary"
+                onClick={() => setIsSubmitted(false)}
+              >
+                Send Another Message
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -96,6 +170,27 @@ const Contact = () => {
               <div className="form-header">
                 <h3>Send us a Message</h3>
                 <p>Fill out the form below and we'll get back to you soon.</p>
+                
+                {/* Test button for debugging */}
+                <button 
+                  type="button" 
+                  onClick={() => {
+                    const testMailto = 'mailto:imagineedtech@gmail.com?subject=Test Email&body=This is a test email.';
+                    console.log('Test mailto:', testMailto);
+                    window.open(testMailto, '_self');
+                  }}
+                  style={{
+                    padding: '8px 16px',
+                    background: '#f3f4f6',
+                    border: '1px solid #d1d5db',
+                    borderRadius: '6px',
+                    fontSize: '12px',
+                    cursor: 'pointer',
+                    marginBottom: '16px'
+                  }}
+                >
+                  Test Email (Debug)
+                </button>
               </div>
 
               <div className="form-row">
@@ -124,7 +219,7 @@ const Contact = () => {
                   />
                 </div>
               </div>
-
+<a href="mailto:your.email@example.com">Send Email</a>
 
               <div className="form-group">
                 <label htmlFor="message">Project Description *</label>
@@ -146,12 +241,12 @@ const Contact = () => {
                 {isSubmitting ? (
                   <>
                     <div className="spinner small"></div>
-                    Sending...
+                    Opening Email...
                   </>
                 ) : (
                   <>
-                    Send Message
-                    <Send className="btn-icon" />
+                    Send via Email
+                    <Mail className="btn-icon" />
                   </>
                 )}
               </button>

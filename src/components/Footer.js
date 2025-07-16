@@ -53,9 +53,9 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+    // { icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
+    // { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/company/imagine-edtech/', label: 'LinkedIn' },
     { icon: Github, href: 'https://github.com', label: 'GitHub' },
     { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' }
   ];
@@ -139,11 +139,11 @@ const Footer = () => {
               </div>
             </form>
 
-            <div className="footer-badges">
+            {/* <div className="footer-badges">
               <div className="badge">
                 <span className="badge-text">ISO 27001 Certified</span>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -151,7 +151,7 @@ const Footer = () => {
           <div className="footer-bottom-content">
             <div className="copyright">
               <p>
-                © 2024 Imagine EdTech. Made with <Heart className="heart-icon" /> for educational excellence.
+                © 2025 Imagine EdTech. Made with <Heart className="heart-icon" /> for educational excellence.
               </p>
             </div>
             

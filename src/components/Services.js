@@ -4,16 +4,6 @@ import '../styles/components/services.css';
 
 const services = [
   {
-    title: 'Quality Assurance',
-    subtitle: 'Enterprise Testing Solutions',
-    description: 'Comprehensive testing strategies ensuring your product meets the highest standards of quality, security, and reliability across all platforms.',
-    icon: <ShieldCheck size={56} />,
-    features: ['Automated Testing Suites', 'Manual QA Processes', 'Performance Optimization', 'Security Vulnerability Audits'],
-    color: '#00fff7',
-    gradient: 'linear-gradient(135deg, #00fff7 0%, #0891b2 100%)',
-    stats: { projects: '500+', accuracy: '99.9%' }
-  },
-  {
     title: 'Backend Development',
     subtitle: 'Scalable Server Solutions',
     description: 'Robust, high-performance backend architectures built with cutting-edge technologies and industry best practices.',
@@ -23,6 +13,17 @@ const services = [
     gradient: 'linear-gradient(135deg, #ff7a00 0%, #f97316 100%)',
     stats: { apis: '1000+', uptime: '99.99%' }
   },
+  {
+    title: 'Quality Assurance',
+    subtitle: 'Enterprise Testing Solutions',
+    description: 'Comprehensive testing strategies ensuring your product meets the highest standards of quality, security, and reliability across all platforms.',
+    icon: <ShieldCheck size={56} />,
+    features: ['Automated Testing Suites', 'Manual QA Processes', 'Performance Optimization', 'Security Vulnerability Audits'],
+    color: '#00fff7',
+    gradient: 'linear-gradient(135deg, #00fff7 0%, #0891b2 100%)',
+    stats: { projects: '500+', accuracy: '99.9%' }
+  },
+  
   {
     title: 'Process Automation',
     subtitle: 'Intelligent Workflow Solutions',
@@ -108,7 +109,7 @@ const Services = () => {
         <div className="services-header">
           <div className="services-badge">
             <Star size={16} />
-            <span>Our Services</span>
+            <span>OUR SERVICES</span>
           </div>
           <p className="services-subtitle">
             Delivering cutting-edge solutions that drive innovation, enhance performance, 
