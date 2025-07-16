@@ -38,22 +38,12 @@ const Contact = () => {
     
     // Create email subject and body
     const subject = `New Project Inquiry from ${formData.name || 'Website Visitor'}`;
-    const body = `Hello Imagine EdTech Team,
-
-I am interested in your services and would like to discuss a potential project.
-
-Contact Details:
-- Name: ${formData.name}
-- Email: ${formData.email}
-
-Project Description:
+    const body = `
 ${formData.message}
 
-Please get back to me at your earliest convenience.
-
 Best regards,
-${formData.name}`;
-
+${formData.name}
+${formData.email}`;
     // Create mailto link
     const mailtoLink = `mailto:imagineedtech@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     

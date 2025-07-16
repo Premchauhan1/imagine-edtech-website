@@ -242,6 +242,7 @@
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(0, 255, 247, 0.2);
+  margin: 5px;
 }
 
 .tab-content::before {
@@ -1021,7 +1022,7 @@
   
   .tab-content {
     padding: 32px 20px;
-            margin: 20px;
+      margin: 20px;
   }
   
   .mission-tabs {
