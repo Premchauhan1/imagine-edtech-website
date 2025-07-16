@@ -599,10 +599,10 @@
     padding: 0 16px;
   }
   
-  .success-actions {
+  /* .success-actions {
     flex-direction: column;
     width: 100%;
-  }
+  } */
   
   .success-actions .btn {
     width: 100%;

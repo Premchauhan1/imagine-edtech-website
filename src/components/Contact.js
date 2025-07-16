@@ -102,11 +102,6 @@ ${formData.name}`;
       <section id="contact" className="contact">
         <div className="container">
           <div className="success-message">
-            <div className="success-icon">
-              <CheckCircle />
-            </div>
-            <h2>Email Client Opened!</h2>
-            <p>Your email client should have opened with a pre-filled message to imagineedtech@gmail.com.</p>
             
             <div className="email-fallback">
               <h3>If your email client didn't open, you can manually send an email to:</h3>
@@ -121,15 +116,7 @@ ${formData.name}`;
             </div>
             
             <div className="success-actions">
-              <button 
-                className="btn btn-primary"
-                onClick={() => {
-                  const mailtoLink = `mailto:imagineedtech@gmail.com?subject=${encodeURIComponent(formData.emailDetails?.subject || '')}&body=${encodeURIComponent(formData.emailDetails?.body || '')}`;
-                  window.open(mailtoLink, '_self');
-                }}
-              >
-                Try Opening Email Again
-              </button>
+             
               <button 
                 className="btn btn-secondary"
                 onClick={() => setIsSubmitted(false)}
@@ -214,7 +201,6 @@ ${formData.name}`;
               >
                 {isSubmitting ? (
                   <>
-                    <div className="spinner small"></div>
                     Opening Email...
                   </>
                 ) : (
