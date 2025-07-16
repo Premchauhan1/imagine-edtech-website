@@ -107,7 +107,7 @@ const Services = () => {
     <section id="services" className="services-section">
       <div className="services-container">
         <div className="services-header">
-          <div className="services-badge">
+          <div className="section-badge">
             <Star size={16} />
             <span>OUR SERVICES</span>
           </div>

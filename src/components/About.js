@@ -151,7 +151,7 @@ const About = () => {
         </div>
         <div className="about-container">
           <div className="hero-content">
-            <div className="hero-badge">
+            <div className="section-badge">
               <Star size={16} />
               <span>About Imagine EdTech</span>
             </div>
@@ -251,7 +251,10 @@ const About = () => {
         {/* Timeline */}
         <div className="timeline-section">
           <div className="section-header">
-            <h2 className="hero-badge">Our Journey</h2>
+            <div className="section-badge">
+              <Star size={16} />
+              <span>Our Journey</span>
+            </div>
             <p className="section-subtitle">
               Milestones that shaped our growth and success
             </p>

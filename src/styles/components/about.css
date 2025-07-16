@@ -76,26 +76,7 @@
   margin: 0 auto;
   line-height: var(--line-height-relaxed);
 }
-.hero-badge {
-    display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-2) var(--space-4);
-  background: var(--primary-50);
-  color: var(--primary-700);
-  border: 1px solid var(--primary-200);
-  border-radius: var(--radius-full);
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-medium);
-  margin-bottom: var(--space-6);
-  box-shadow: var(--shadow-sm);
-  transition: all var(--transition-base);
-}
 
-.hero-badge:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
 
 .hero-title {
   font-size: var(--font-size-5xl);
