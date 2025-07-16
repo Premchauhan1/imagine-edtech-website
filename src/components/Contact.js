@@ -37,13 +37,9 @@ const Contact = () => {
     setIsSubmitting(true);
     
     // Create email subject and body
-    const subject = `New Project Inquiry from ${formData.name || 'Website Visitor'}`;
-    const body = `
-${formData.message}
+    const subject = `${formData.email}`;
+    const body = `${formData.message}`;
 
-Best regards,
-${formData.name}
-${formData.email}`;
     // Create mailto link
     const mailtoLink = `mailto:imagineedtech@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     
@@ -159,15 +155,14 @@ ${formData.email}`;
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="email">Email Address *</label>
+                  <label htmlFor="email">Subject*</label>
                   <input
-                    type="email"
                     id="email"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    placeholder="john@company.com"
+                    placeholder="Enter Subject"
                   />
                 </div>
               </div>
