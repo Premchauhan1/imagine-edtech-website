@@ -57,9 +57,6 @@ ${formData.name}`;
     // Create mailto link
     const mailtoLink = `mailto:imagineedtech@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     
-    // Debug: Log the mailto link
-    console.log('Mailto link:', mailtoLink);
-    
     // Try multiple methods to open email client
     try {
       // Method 1: Try window.open first
@@ -70,7 +67,6 @@ ${formData.name}`;
         window.location.href = mailtoLink;
       }
     } catch (error) {
-      console.error('Error opening email client:', error);
       // Method 3: Create a temporary link and click it
       const tempLink = document.createElement('a');
       tempLink.href = mailtoLink;
@@ -170,27 +166,6 @@ ${formData.name}`;
               <div className="form-header">
                 <h3>Send us a Message</h3>
                 <p>Fill out the form below and we'll get back to you soon.</p>
-                
-                {/* Test button for debugging */}
-                <button 
-                  type="button" 
-                  onClick={() => {
-                    const testMailto = 'mailto:imagineedtech@gmail.com?subject=Test Email&body=This is a test email.';
-                    console.log('Test mailto:', testMailto);
-                    window.open(testMailto, '_self');
-                  }}
-                  style={{
-                    padding: '8px 16px',
-                    background: '#f3f4f6',
-                    border: '1px solid #d1d5db',
-                    borderRadius: '6px',
-                    fontSize: '12px',
-                    cursor: 'pointer',
-                    marginBottom: '16px'
-                  }}
-                >
-                  Test Email (Debug)
-                </button>
               </div>
 
               <div className="form-row">
@@ -219,7 +194,6 @@ ${formData.name}`;
                   />
                 </div>
               </div>
-<a href="mailto:your.email@example.com">Send Email</a>
 
               <div className="form-group">
                 <label htmlFor="message">Project Description *</label>
